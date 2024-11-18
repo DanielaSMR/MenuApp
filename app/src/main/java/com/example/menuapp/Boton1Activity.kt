@@ -8,11 +8,21 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class Boton1Activity : AppCompatActivity() {
+
+    private lateinit var viewSaludo : TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_boton1)
-        val tvSaludo : TextView = findViewById(R.id.saludo)
-        tvSaludo.text = "Hola"
     }
+
+    private fun initComponents(){
+        viewSaludo = findViewById(R.id.saludo)
+    }
+
+    private fun setTexto(){
+        viewSaludo.text = "Hola"
+    }
+
 }
