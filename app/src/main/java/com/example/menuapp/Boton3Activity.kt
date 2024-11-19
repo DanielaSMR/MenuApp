@@ -6,29 +6,25 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.snackbar.Snackbar
 
-class Boton1Activity : AppCompatActivity() {
+class Boton3Activity : AppCompatActivity() {
 
     private lateinit var viewSaludo : TextView
+    private var name : String = "Daniela"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_boton1)
+        setContentView(R.layout.activity_boton3)
         initComponents()
-        initUI()
+
+        if (name.isNotEmpty()) {
+            Snackbar.make(viewSaludo,"Hola $name!", Snackbar.LENGTH_SHORT).show()
+        }
     }
 
     private fun initComponents(){
-        viewSaludo = findViewById(R.id.saludo)
+        viewSaludo = findViewById(R.id.saludo3)
     }
-
-    private fun initUI(){
-        setTexto("Hola")
-    }
-
-    private fun setTexto(texto: String){
-        viewSaludo.text = texto
-    }
-
 }
